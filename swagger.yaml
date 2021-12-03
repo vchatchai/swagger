@@ -1,0 +1,1570 @@
+{
+    "apiVersion": "1.1.0",
+    "swaggerVersion": "1.2",
+    "basePath": "/bs-subsidiarycustomerdocument/v1",
+    "resourcePath": "/api",
+    "produces": [
+        "application/json",
+        "application/xml"
+    ],
+    "consumes": [
+        "application/json",
+        "application/xml"
+    ],
+    "apis": [
+        {
+            "path": "/api/document/list/typedocument",
+            "operations": [
+                {
+                    "method": "GET",
+                    "summary": "The method getListTypeDocument.",
+                    "notes": "The method getListTypeDocument.",
+                    "type": "ListTypeDocument",
+                    "nickname": "getListTypeDocument",
+                    "parameters": [
+                        {
+                            "name": "userId",
+                            "description": "user id",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "header"
+                        },
+                        {
+                            "name": "userPeo",
+                            "description": "user peo",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "header"
+                        },
+                        {
+                            "name": "societyCode",
+                            "description": "society code",
+                            "defaultValue": "01",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "header"
+                        },
+                        {
+                            "name": "entityCode",
+                            "description": "entity code",
+                            "required": false,
+                            "type": "string",
+                            "paramType": "header"
+                        },
+                        {
+                            "name": "consumingChannel",
+                            "description": "consuming channel",
+                            "defaultValue": "INTRANET",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "header"
+                        },
+                        {
+                            "name": "consumingId",
+                            "description": "consuming id",
+                            "defaultValue": "SOAT",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "header"
+                        },
+                        {
+                            "name": "tokenContext",
+                            "description": "bred token context",
+                            "required": false,
+                            "type": "string",
+                            "paramType": "header"
+                        },
+                        {
+                            "name": "tokenValue",
+                            "description": "bred token value",
+                            "required": false,
+                            "type": "string",
+                            "paramType": "header"
+                        },
+                        {
+                            "name": "disableTokenValidation",
+                            "description": "disable token validation",
+                            "defaultValue": "true",
+                            "required": true,
+                            "type": "boolean",
+                            "paramType": "header"
+                        },
+                        {
+                            "name": "applicationId",
+                            "description": "application id",
+                            "required": false,
+                            "type": "string",
+                            "paramType": "header"
+                        },
+                        {
+                            "name": "transactionId",
+                            "description": "transaction id",
+                            "required": false,
+                            "type": "string",
+                            "paramType": "header"
+                        }
+                    ],
+                    "responseMessages": [
+                        {
+                            "code": 400,
+                            "message": "the exception BadRequestException.",
+                            "responseModel": "BadRequestExceptionErrorResponse"
+                        },
+                        {
+                            "code": 401,
+                            "message": "the exception UnauthorizedException.",
+                            "responseModel": "UnauthorizedExceptionErrorResponse"
+                        },
+                        {
+                            "code": 404,
+                            "message": "the exception NotFoundException.",
+                            "responseModel": "NotFoundExceptionErrorResponse"
+                        },
+                        {
+                            "code": 500,
+                            "message": "the exception ServiceException.",
+                            "responseModel": "ErrorResponse"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "path": "/api/document/search",
+            "operations": [
+                {
+                    "method": "PUT",
+                    "summary": "The method searchDocumentByCriteria.",
+                    "notes": "The method searchDocumentByCriteria.",
+                    "type": "MetaDataDocuments",
+                    "nickname": "searchDocumentByCriteria",
+                    "parameters": [
+                        {
+                            "name": "body",
+                            "description": "the input parameter customerDocumentSearch.",
+                            "required": true,
+                            "type": "CustomerDocumentSearch",
+                            "paramType": "body"
+                        },
+                        {
+                            "name": "userId",
+                            "description": "user id",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "header"
+                        },
+                        {
+                            "name": "userPeo",
+                            "description": "user peo",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "header"
+                        },
+                        {
+                            "name": "societyCode",
+                            "description": "society code",
+                            "defaultValue": "01",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "header"
+                        },
+                        {
+                            "name": "entityCode",
+                            "description": "entity code",
+                            "required": false,
+                            "type": "string",
+                            "paramType": "header"
+                        },
+                        {
+                            "name": "consumingChannel",
+                            "description": "consuming channel",
+                            "defaultValue": "INTRANET",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "header"
+                        },
+                        {
+                            "name": "consumingId",
+                            "description": "consuming id",
+                            "defaultValue": "SOAT",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "header"
+                        },
+                        {
+                            "name": "tokenContext",
+                            "description": "bred token context",
+                            "required": false,
+                            "type": "string",
+                            "paramType": "header"
+                        },
+                        {
+                            "name": "tokenValue",
+                            "description": "bred token value",
+                            "required": false,
+                            "type": "string",
+                            "paramType": "header"
+                        },
+                        {
+                            "name": "disableTokenValidation",
+                            "description": "disable token validation",
+                            "defaultValue": "true",
+                            "required": true,
+                            "type": "boolean",
+                            "paramType": "header"
+                        },
+                        {
+                            "name": "applicationId",
+                            "description": "application id",
+                            "required": false,
+                            "type": "string",
+                            "paramType": "header"
+                        },
+                        {
+                            "name": "transactionId",
+                            "description": "transaction id",
+                            "required": false,
+                            "type": "string",
+                            "paramType": "header"
+                        }
+                    ],
+                    "responseMessages": [
+                        {
+                            "code": 400,
+                            "message": "the exception BadRequestException.",
+                            "responseModel": "BadRequestExceptionErrorResponse"
+                        },
+                        {
+                            "code": 401,
+                            "message": "the exception UnauthorizedException.",
+                            "responseModel": "UnauthorizedExceptionErrorResponse"
+                        },
+                        {
+                            "code": 404,
+                            "message": "the exception NotFoundException.",
+                            "responseModel": "NotFoundExceptionErrorResponse"
+                        },
+                        {
+                            "code": 500,
+                            "message": "the exception ServiceException.",
+                            "responseModel": "ErrorResponse"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "path": "/api/document/upload",
+            "operations": [
+                {
+                    "method": "PUT",
+                    "summary": "The method updateMetaDataDocument.",
+                    "notes": "The method updateMetaDataDocument.",
+                    "type": "MetaDataDocument",
+                    "nickname": "updateMetaDataDocument",
+                    "parameters": [
+                        {
+                            "name": "body",
+                            "description": "the input parameter metaDataDocument.",
+                            "required": true,
+                            "type": "MetaDataDocument",
+                            "paramType": "body"
+                        },
+                        {
+                            "name": "userId",
+                            "description": "user id",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "header"
+                        },
+                        {
+                            "name": "userPeo",
+                            "description": "user peo",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "header"
+                        },
+                        {
+                            "name": "societyCode",
+                            "description": "society code",
+                            "defaultValue": "01",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "header"
+                        },
+                        {
+                            "name": "entityCode",
+                            "description": "entity code",
+                            "required": false,
+                            "type": "string",
+                            "paramType": "header"
+                        },
+                        {
+                            "name": "consumingChannel",
+                            "description": "consuming channel",
+                            "defaultValue": "INTRANET",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "header"
+                        },
+                        {
+                            "name": "consumingId",
+                            "description": "consuming id",
+                            "defaultValue": "SOAT",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "header"
+                        },
+                        {
+                            "name": "tokenContext",
+                            "description": "bred token context",
+                            "required": false,
+                            "type": "string",
+                            "paramType": "header"
+                        },
+                        {
+                            "name": "tokenValue",
+                            "description": "bred token value",
+                            "required": false,
+                            "type": "string",
+                            "paramType": "header"
+                        },
+                        {
+                            "name": "disableTokenValidation",
+                            "description": "disable token validation",
+                            "defaultValue": "true",
+                            "required": true,
+                            "type": "boolean",
+                            "paramType": "header"
+                        },
+                        {
+                            "name": "applicationId",
+                            "description": "application id",
+                            "required": false,
+                            "type": "string",
+                            "paramType": "header"
+                        },
+                        {
+                            "name": "transactionId",
+                            "description": "transaction id",
+                            "required": false,
+                            "type": "string",
+                            "paramType": "header"
+                        }
+                    ],
+                    "responseMessages": [
+                        {
+                            "code": 400,
+                            "message": "the exception BadRequestException.",
+                            "responseModel": "BadRequestExceptionErrorResponse"
+                        },
+                        {
+                            "code": 401,
+                            "message": "the exception UnauthorizedException.",
+                            "responseModel": "UnauthorizedExceptionErrorResponse"
+                        },
+                        {
+                            "code": 404,
+                            "message": "the exception NotFoundException.",
+                            "responseModel": "NotFoundExceptionErrorResponse"
+                        },
+                        {
+                            "code": 500,
+                            "message": "the exception ServiceException.",
+                            "responseModel": "ErrorResponse"
+                        }
+                    ]
+                },
+                {
+                    "method": "POST",
+                    "summary": "The method uploadDocument.",
+                    "notes": "The method uploadDocument.",
+                    "type": "UploadStatus",
+                    "nickname": "uploadDocument",
+                    "parameters": [
+                        {
+                            "name": "body",
+                            "description": "the input parameter uploadDocument.",
+                            "required": true,
+                            "type": "UploadDocument",
+                            "paramType": "body"
+                        },
+                        {
+                            "name": "userId",
+                            "description": "user id",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "header"
+                        },
+                        {
+                            "name": "userPeo",
+                            "description": "user peo",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "header"
+                        },
+                        {
+                            "name": "societyCode",
+                            "description": "society code",
+                            "defaultValue": "01",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "header"
+                        },
+                        {
+                            "name": "entityCode",
+                            "description": "entity code",
+                            "required": false,
+                            "type": "string",
+                            "paramType": "header"
+                        },
+                        {
+                            "name": "consumingChannel",
+                            "description": "consuming channel",
+                            "defaultValue": "INTRANET",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "header"
+                        },
+                        {
+                            "name": "consumingId",
+                            "description": "consuming id",
+                            "defaultValue": "SOAT",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "header"
+                        },
+                        {
+                            "name": "tokenContext",
+                            "description": "bred token context",
+                            "required": false,
+                            "type": "string",
+                            "paramType": "header"
+                        },
+                        {
+                            "name": "tokenValue",
+                            "description": "bred token value",
+                            "required": false,
+                            "type": "string",
+                            "paramType": "header"
+                        },
+                        {
+                            "name": "disableTokenValidation",
+                            "description": "disable token validation",
+                            "defaultValue": "true",
+                            "required": true,
+                            "type": "boolean",
+                            "paramType": "header"
+                        },
+                        {
+                            "name": "applicationId",
+                            "description": "application id",
+                            "required": false,
+                            "type": "string",
+                            "paramType": "header"
+                        },
+                        {
+                            "name": "transactionId",
+                            "description": "transaction id",
+                            "required": false,
+                            "type": "string",
+                            "paramType": "header"
+                        }
+                    ],
+                    "responseMessages": [
+                        {
+                            "code": 400,
+                            "message": "the exception BadRequestException.",
+                            "responseModel": "BadRequestExceptionErrorResponse"
+                        },
+                        {
+                            "code": 401,
+                            "message": "the exception UnauthorizedException.",
+                            "responseModel": "UnauthorizedExceptionErrorResponse"
+                        },
+                        {
+                            "code": 404,
+                            "message": "the exception NotFoundException.",
+                            "responseModel": "NotFoundExceptionErrorResponse"
+                        },
+                        {
+                            "code": 500,
+                            "message": "the exception ServiceException.",
+                            "responseModel": "ErrorResponse"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "path": "/api/document/unvalidated",
+            "operations": [
+                {
+                    "method": "PUT",
+                    "summary": "The method updateUnvalidateDocumentStatus.",
+                    "notes": "The method updateUnvalidateDocumentStatus.",
+                    "type": "MetaDataDocument",
+                    "nickname": "updateUnvalidateDocumentStatus",
+                    "parameters": [
+                        {
+                            "name": "body",
+                            "description": "the input parameter invalidate.",
+                            "required": true,
+                            "type": "InvalidDocument",
+                            "paramType": "body"
+                        },
+                        {
+                            "name": "userId",
+                            "description": "user id",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "header"
+                        },
+                        {
+                            "name": "userPeo",
+                            "description": "user peo",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "header"
+                        },
+                        {
+                            "name": "societyCode",
+                            "description": "society code",
+                            "defaultValue": "01",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "header"
+                        },
+                        {
+                            "name": "entityCode",
+                            "description": "entity code",
+                            "required": false,
+                            "type": "string",
+                            "paramType": "header"
+                        },
+                        {
+                            "name": "consumingChannel",
+                            "description": "consuming channel",
+                            "defaultValue": "INTRANET",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "header"
+                        },
+                        {
+                            "name": "consumingId",
+                            "description": "consuming id",
+                            "defaultValue": "SOAT",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "header"
+                        },
+                        {
+                            "name": "tokenContext",
+                            "description": "bred token context",
+                            "required": false,
+                            "type": "string",
+                            "paramType": "header"
+                        },
+                        {
+                            "name": "tokenValue",
+                            "description": "bred token value",
+                            "required": false,
+                            "type": "string",
+                            "paramType": "header"
+                        },
+                        {
+                            "name": "disableTokenValidation",
+                            "description": "disable token validation",
+                            "defaultValue": "true",
+                            "required": true,
+                            "type": "boolean",
+                            "paramType": "header"
+                        },
+                        {
+                            "name": "applicationId",
+                            "description": "application id",
+                            "required": false,
+                            "type": "string",
+                            "paramType": "header"
+                        },
+                        {
+                            "name": "transactionId",
+                            "description": "transaction id",
+                            "required": false,
+                            "type": "string",
+                            "paramType": "header"
+                        }
+                    ],
+                    "responseMessages": [
+                        {
+                            "code": 400,
+                            "message": "the exception BadRequestException.",
+                            "responseModel": "BadRequestExceptionErrorResponse"
+                        },
+                        {
+                            "code": 401,
+                            "message": "the exception UnauthorizedException.",
+                            "responseModel": "UnauthorizedExceptionErrorResponse"
+                        },
+                        {
+                            "code": 404,
+                            "message": "the exception NotFoundException.",
+                            "responseModel": "NotFoundExceptionErrorResponse"
+                        },
+                        {
+                            "code": 500,
+                            "message": "the exception ServiceException.",
+                            "responseModel": "ErrorResponse"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "path": "/api/document/list/channel",
+            "operations": [
+                {
+                    "method": "GET",
+                    "summary": "The method getListChannel.",
+                    "notes": "The method getListChannel.",
+                    "type": "ListChannel",
+                    "nickname": "getListChannel",
+                    "parameters": [
+                        {
+                            "name": "userId",
+                            "description": "user id",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "header"
+                        },
+                        {
+                            "name": "userPeo",
+                            "description": "user peo",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "header"
+                        },
+                        {
+                            "name": "societyCode",
+                            "description": "society code",
+                            "defaultValue": "01",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "header"
+                        },
+                        {
+                            "name": "entityCode",
+                            "description": "entity code",
+                            "required": false,
+                            "type": "string",
+                            "paramType": "header"
+                        },
+                        {
+                            "name": "consumingChannel",
+                            "description": "consuming channel",
+                            "defaultValue": "INTRANET",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "header"
+                        },
+                        {
+                            "name": "consumingId",
+                            "description": "consuming id",
+                            "defaultValue": "SOAT",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "header"
+                        },
+                        {
+                            "name": "tokenContext",
+                            "description": "bred token context",
+                            "required": false,
+                            "type": "string",
+                            "paramType": "header"
+                        },
+                        {
+                            "name": "tokenValue",
+                            "description": "bred token value",
+                            "required": false,
+                            "type": "string",
+                            "paramType": "header"
+                        },
+                        {
+                            "name": "disableTokenValidation",
+                            "description": "disable token validation",
+                            "defaultValue": "true",
+                            "required": true,
+                            "type": "boolean",
+                            "paramType": "header"
+                        },
+                        {
+                            "name": "applicationId",
+                            "description": "application id",
+                            "required": false,
+                            "type": "string",
+                            "paramType": "header"
+                        },
+                        {
+                            "name": "transactionId",
+                            "description": "transaction id",
+                            "required": false,
+                            "type": "string",
+                            "paramType": "header"
+                        }
+                    ],
+                    "responseMessages": [
+                        {
+                            "code": 400,
+                            "message": "the exception BadRequestException.",
+                            "responseModel": "BadRequestExceptionErrorResponse"
+                        },
+                        {
+                            "code": 401,
+                            "message": "the exception UnauthorizedException.",
+                            "responseModel": "UnauthorizedExceptionErrorResponse"
+                        },
+                        {
+                            "code": 404,
+                            "message": "the exception NotFoundException.",
+                            "responseModel": "NotFoundExceptionErrorResponse"
+                        },
+                        {
+                            "code": 500,
+                            "message": "the exception ServiceException.",
+                            "responseModel": "ErrorResponse"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "path": "/api/document/list/application",
+            "operations": [
+                {
+                    "method": "GET",
+                    "summary": "The method getListApplication.",
+                    "notes": "The method getListApplication.",
+                    "type": "ListApplication",
+                    "nickname": "getListApplication",
+                    "parameters": [
+                        {
+                            "name": "userId",
+                            "description": "user id",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "header"
+                        },
+                        {
+                            "name": "userPeo",
+                            "description": "user peo",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "header"
+                        },
+                        {
+                            "name": "societyCode",
+                            "description": "society code",
+                            "defaultValue": "01",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "header"
+                        },
+                        {
+                            "name": "entityCode",
+                            "description": "entity code",
+                            "required": false,
+                            "type": "string",
+                            "paramType": "header"
+                        },
+                        {
+                            "name": "consumingChannel",
+                            "description": "consuming channel",
+                            "defaultValue": "INTRANET",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "header"
+                        },
+                        {
+                            "name": "consumingId",
+                            "description": "consuming id",
+                            "defaultValue": "SOAT",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "header"
+                        },
+                        {
+                            "name": "tokenContext",
+                            "description": "bred token context",
+                            "required": false,
+                            "type": "string",
+                            "paramType": "header"
+                        },
+                        {
+                            "name": "tokenValue",
+                            "description": "bred token value",
+                            "required": false,
+                            "type": "string",
+                            "paramType": "header"
+                        },
+                        {
+                            "name": "disableTokenValidation",
+                            "description": "disable token validation",
+                            "defaultValue": "true",
+                            "required": true,
+                            "type": "boolean",
+                            "paramType": "header"
+                        },
+                        {
+                            "name": "applicationId",
+                            "description": "application id",
+                            "required": false,
+                            "type": "string",
+                            "paramType": "header"
+                        },
+                        {
+                            "name": "transactionId",
+                            "description": "transaction id",
+                            "required": false,
+                            "type": "string",
+                            "paramType": "header"
+                        }
+                    ],
+                    "responseMessages": [
+                        {
+                            "code": 400,
+                            "message": "the exception BadRequestException.",
+                            "responseModel": "BadRequestExceptionErrorResponse"
+                        },
+                        {
+                            "code": 401,
+                            "message": "the exception UnauthorizedException.",
+                            "responseModel": "UnauthorizedExceptionErrorResponse"
+                        },
+                        {
+                            "code": 404,
+                            "message": "the exception NotFoundException.",
+                            "responseModel": "NotFoundExceptionErrorResponse"
+                        },
+                        {
+                            "code": 500,
+                            "message": "the exception ServiceException.",
+                            "responseModel": "ErrorResponse"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "path": "/api/document/list/bank",
+            "operations": [
+                {
+                    "method": "GET",
+                    "summary": "The method getListBank.",
+                    "notes": "The method getListBank.",
+                    "type": "ListBank",
+                    "nickname": "getListBank",
+                    "parameters": [
+                        {
+                            "name": "userId",
+                            "description": "user id",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "header"
+                        },
+                        {
+                            "name": "userPeo",
+                            "description": "user peo",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "header"
+                        },
+                        {
+                            "name": "societyCode",
+                            "description": "society code",
+                            "defaultValue": "01",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "header"
+                        },
+                        {
+                            "name": "entityCode",
+                            "description": "entity code",
+                            "required": false,
+                            "type": "string",
+                            "paramType": "header"
+                        },
+                        {
+                            "name": "consumingChannel",
+                            "description": "consuming channel",
+                            "defaultValue": "INTRANET",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "header"
+                        },
+                        {
+                            "name": "consumingId",
+                            "description": "consuming id",
+                            "defaultValue": "SOAT",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "header"
+                        },
+                        {
+                            "name": "tokenContext",
+                            "description": "bred token context",
+                            "required": false,
+                            "type": "string",
+                            "paramType": "header"
+                        },
+                        {
+                            "name": "tokenValue",
+                            "description": "bred token value",
+                            "required": false,
+                            "type": "string",
+                            "paramType": "header"
+                        },
+                        {
+                            "name": "disableTokenValidation",
+                            "description": "disable token validation",
+                            "defaultValue": "true",
+                            "required": true,
+                            "type": "boolean",
+                            "paramType": "header"
+                        },
+                        {
+                            "name": "applicationId",
+                            "description": "application id",
+                            "required": false,
+                            "type": "string",
+                            "paramType": "header"
+                        },
+                        {
+                            "name": "transactionId",
+                            "description": "transaction id",
+                            "required": false,
+                            "type": "string",
+                            "paramType": "header"
+                        }
+                    ],
+                    "responseMessages": [
+                        {
+                            "code": 400,
+                            "message": "the exception BadRequestException.",
+                            "responseModel": "BadRequestExceptionErrorResponse"
+                        },
+                        {
+                            "code": 401,
+                            "message": "the exception UnauthorizedException.",
+                            "responseModel": "UnauthorizedExceptionErrorResponse"
+                        },
+                        {
+                            "code": 404,
+                            "message": "the exception NotFoundException.",
+                            "responseModel": "NotFoundExceptionErrorResponse"
+                        },
+                        {
+                            "code": 500,
+                            "message": "the exception ServiceException.",
+                            "responseModel": "ErrorResponse"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "path": "/api/document/{documentId}",
+            "operations": [
+                {
+                    "method": "GET",
+                    "summary": "The method getDocument.",
+                    "notes": "The method getDocument.",
+                    "type": "DataDocument",
+                    "nickname": "getDocument",
+                    "parameters": [
+                        {
+                            "name": "documentId",
+                            "description": "the input parameter documentId.",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "path"
+                        },
+                        {
+                            "name": "userId",
+                            "description": "user id",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "header"
+                        },
+                        {
+                            "name": "userPeo",
+                            "description": "user peo",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "header"
+                        },
+                        {
+                            "name": "societyCode",
+                            "description": "society code",
+                            "defaultValue": "01",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "header"
+                        },
+                        {
+                            "name": "entityCode",
+                            "description": "entity code",
+                            "required": false,
+                            "type": "string",
+                            "paramType": "header"
+                        },
+                        {
+                            "name": "consumingChannel",
+                            "description": "consuming channel",
+                            "defaultValue": "INTRANET",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "header"
+                        },
+                        {
+                            "name": "consumingId",
+                            "description": "consuming id",
+                            "defaultValue": "SOAT",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "header"
+                        },
+                        {
+                            "name": "tokenContext",
+                            "description": "bred token context",
+                            "required": false,
+                            "type": "string",
+                            "paramType": "header"
+                        },
+                        {
+                            "name": "tokenValue",
+                            "description": "bred token value",
+                            "required": false,
+                            "type": "string",
+                            "paramType": "header"
+                        },
+                        {
+                            "name": "disableTokenValidation",
+                            "description": "disable token validation",
+                            "defaultValue": "true",
+                            "required": true,
+                            "type": "boolean",
+                            "paramType": "header"
+                        },
+                        {
+                            "name": "applicationId",
+                            "description": "application id",
+                            "required": false,
+                            "type": "string",
+                            "paramType": "header"
+                        },
+                        {
+                            "name": "transactionId",
+                            "description": "transaction id",
+                            "required": false,
+                            "type": "string",
+                            "paramType": "header"
+                        }
+                    ],
+                    "responseMessages": [
+                        {
+                            "code": 400,
+                            "message": "the exception BadRequestException.",
+                            "responseModel": "BadRequestExceptionErrorResponse"
+                        },
+                        {
+                            "code": 401,
+                            "message": "the exception UnauthorizedException.",
+                            "responseModel": "UnauthorizedExceptionErrorResponse"
+                        },
+                        {
+                            "code": 404,
+                            "message": "the exception NotFoundException.",
+                            "responseModel": "NotFoundExceptionErrorResponse"
+                        },
+                        {
+                            "code": 500,
+                            "message": "the exception ServiceException.",
+                            "responseModel": "ErrorResponse"
+                        }
+                    ]
+                }
+            ]
+        }
+    ],
+    "models": {
+        "ListChannel": {
+            "id": "ListChannel",
+            "properties": {
+                "listChannel": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "Channel"
+                    }
+                }
+            }
+        },
+        "ListBank": {
+            "id": "ListBank",
+            "properties": {
+                "listBank": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "Bank"
+                    }
+                }
+            }
+        },
+        "Channel": {
+            "id": "Channel",
+            "properties": {
+                "label": {
+                    "type": "string"
+                },
+                "code": {
+                    "type": "string"
+                }
+            }
+        },
+        "InvalidDocument": {
+            "id": "InvalidDocument",
+            "properties": {
+                "unValidateUser": {
+                    "type": "string"
+                },
+                "documentId": {
+                    "type": "string"
+                }
+            }
+        },
+        "NotFoundExceptionErrorResponse": {
+            "id": "NotFoundExceptionErrorResponse",
+            "properties": {
+                "code": {
+                    "type": "string"
+                },
+                "message": {
+                    "type": "string"
+                }
+            }
+        },
+        "CustomerDocumentSearch": {
+            "id": "CustomerDocumentSearch",
+            "properties": {
+                "branches": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "channelCodes": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "applicationCodes": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "rmNames": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "dateBegin": {
+                    "type": "string",
+                    "format": "date-time"
+                },
+                "dateEnd": {
+                    "type": "string",
+                    "format": "date-time"
+                },
+                "documentCategories": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "documentTypes": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "documentIds": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "accountNumbers": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "cifNumber": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "expirationDateBegin": {
+                    "type": "string",
+                    "format": "date-time"
+                },
+                "expirationDateEnd": {
+                    "type": "string",
+                    "format": "date-time"
+                },
+                "unValidateDateBegin": {
+                    "type": "string",
+                    "format": "date-time"
+                },
+                "unValidateDateEnd": {
+                    "type": "string",
+                    "format": "date-time"
+                },
+                "workcaseIds": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "keywords": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "columnParameters": {
+                    "$ref": "Map[string,string]"
+                },
+                "orderBy": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "OrderBy"
+                    }
+                },
+                "length": {
+                    "type": "integer",
+                    "format": "int32"
+                },
+                "offset": {
+                    "type": "integer",
+                    "format": "int32"
+                }
+            }
+        },
+        "MetaDataDocument": {
+            "id": "MetaDataDocument",
+            "properties": {
+                "account": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "Account"
+                    }
+                },
+                "documentType": {
+                    "type": "string"
+                },
+                "acquisitionDate": {
+                    "type": "string",
+                    "format": "date-time"
+                },
+                "acquisitionBank": {
+                    "type": "string"
+                },
+                "acquisitionChannel": {
+                    "type": "string"
+                },
+                "acquisitionApplication": {
+                    "type": "string"
+                },
+                "documentTypeBank": {
+                    "type": "string"
+                },
+                "acquisitionUser": {
+                    "type": "string"
+                },
+                "acquisitionBranch": {
+                    "type": "string"
+                },
+                "expirationDate": {
+                    "type": "string",
+                    "format": "date-time"
+                },
+                "unValidateUser": {
+                    "type": "string"
+                },
+                "stockageDuration": {
+                    "type": "integer",
+                    "format": "int32"
+                },
+                "externalId": {
+                    "type": "string"
+                },
+                "unValidateDate": {
+                    "type": "string",
+                    "format": "date-time"
+                },
+                "documentId": {
+                    "type": "string"
+                },
+                "customer": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "Customer"
+                    }
+                },
+                "workcase": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "Workcase"
+                    }
+                },
+                "category": {
+                    "type": "string"
+                },
+                "keyword": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "Keyword"
+                    }
+                },
+                "name": {
+                    "type": "string"
+                }
+            }
+        },
+        "UploadStatus": {
+            "id": "UploadStatus",
+            "properties": {
+                "documentId": {
+                    "type": "string"
+                }
+            }
+        },
+        "ListTypeDocument": {
+            "id": "ListTypeDocument",
+            "properties": {
+                "listTypeDocument": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "TypeDocument"
+                    }
+                }
+            }
+        },
+        "DataDocument": {
+            "id": "DataDocument",
+            "properties": {
+                "mimeType": {
+                    "type": "string"
+                },
+                "dataBase64": {
+                    "type": "string"
+                }
+            }
+        },
+        "OrderBy": {
+            "id": "OrderBy",
+            "properties": {
+                "order": {
+                    "$ref": "ORDER",
+                    "enum": [
+                        "desc",
+                        "asc"
+                    ]
+                },
+                "field": {
+                    "type": "string"
+                }
+            }
+        },
+        "ListApplication": {
+            "id": "ListApplication",
+            "properties": {
+                "listApplication": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "Application"
+                    }
+                }
+            }
+        },
+        "BadRequestExceptionErrorResponse": {
+            "id": "BadRequestExceptionErrorResponse",
+            "properties": {
+                "code": {
+                    "type": "string"
+                },
+                "message": {
+                    "type": "string"
+                }
+            }
+        },
+        "DataCode": {
+            "id": "DataCode",
+            "properties": {
+                "mandatory": {
+                    "type": "string"
+                },
+                "dataType": {
+                    "type": "string"
+                },
+                "keyword": {
+                    "type": "string"
+                },
+                "id": {
+                    "type": "integer",
+                    "format": "int64"
+                }
+            }
+        },
+        "ErrorResponse": {
+            "id": "ErrorResponse",
+            "properties": {
+                "code": {
+                    "type": "string"
+                },
+                "message": {
+                    "type": "string"
+                }
+            }
+        },
+        "Workcase": {
+            "id": "Workcase",
+            "properties": {
+                "workcaseID": {
+                    "type": "string"
+                }
+            }
+        },
+        "Customer": {
+            "id": "Customer",
+            "properties": {
+                "customerId": {
+                    "type": "string"
+                }
+            }
+        },
+        "Application": {
+            "id": "Application",
+            "properties": {
+                "label": {
+                    "type": "string"
+                },
+                "code": {
+                    "type": "string"
+                }
+            }
+        },
+        "UploadDocument": {
+            "id": "UploadDocument",
+            "properties": {
+                "data": {
+                    "$ref": "DataDocument"
+                },
+                "metaData": {
+                    "$ref": "MetaDataDocument"
+                }
+            }
+        },
+        "TypeDocument": {
+            "id": "TypeDocument",
+            "properties": {
+                "label": {
+                    "type": "string"
+                },
+                "code": {
+                    "type": "string"
+                },
+                "typeDocumentBank": {
+                    "type": "string"
+                },
+                "listDataCode": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "DataCode"
+                    }
+                },
+                "category": {
+                    "type": "string"
+                },
+                "id": {
+                    "type": "integer",
+                    "format": "int64"
+                }
+            }
+        },
+        "UnauthorizedExceptionErrorResponse": {
+            "id": "UnauthorizedExceptionErrorResponse",
+            "properties": {
+                "code": {
+                    "type": "string"
+                },
+                "message": {
+                    "type": "string"
+                }
+            }
+        },
+        "Keyword": {
+            "id": "Keyword",
+            "properties": {
+                "keyword": {
+                    "type": "string"
+                },
+                "value": {
+                    "type": "string"
+                }
+            }
+        },
+        "MetaDataDocuments": {
+            "id": "MetaDataDocuments",
+            "properties": {
+                "listMetaDataDocument": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "MetaDataDocument"
+                    }
+                },
+                "totalHits": {
+                    "type": "integer",
+                    "format": "int32"
+                },
+                "offset": {
+                    "type": "integer",
+                    "format": "int32"
+                }
+            }
+        },
+        "Bank": {
+            "id": "Bank",
+            "properties": {
+                "code": {
+                    "type": "string"
+                },
+                "name": {
+                    "type": "string"
+                }
+            }
+        },
+        "Account": {
+            "id": "Account",
+            "properties": {
+                "accountNumber": {
+                    "type": "string"
+                }
+            }
+        }
+    }
+}
